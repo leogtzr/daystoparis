@@ -1,15 +1,8 @@
-package shellreminders
+package daystoparis
 
 const (
-	shellReminderMainDirectory     = ".shellreminder"
-	minNumberOfRecordsInFile       = 2
-	shellPresenterCommand          = "toilet"
-	lessThanDays                   = 8
-	recordFileSeparator            = ";"
-	warningRemainingDays           = 2
-	redHexColor                    = "#E88388"
-	yellowHexColor                 = "#DBAB79"
-	greenHexColor                  = "#A8CC8C"
+	requiredNumberOfArgs           = 3
+	dateFormat                     = "2006-01-02"
 	errorBuildingAppConfigFromArgs = 2
 	errorRunningApplication        = 1
 )

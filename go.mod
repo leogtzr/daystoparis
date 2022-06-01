@@ -1,4 +1,4 @@
-module github.com/leogtzr/daystoparis 
+module github.com/leogtzr/daystoparis
 
 go 1.18
 
