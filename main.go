@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	_ "github.com/leogtzr/daystoparis/daystoparis"
+	"github.com/leogtzr/daystoparis/daystoparis"
 )
 
 func main() {
