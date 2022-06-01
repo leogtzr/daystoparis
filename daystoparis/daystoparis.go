@@ -17,6 +17,7 @@ func CLI(args []string) int {
 
 	err := app.fromArgs(args)
 	if err != nil {
+		fmt.Fprintf(os.Stderr, "%v\n", err)
 		return errorBuildingAppConfigFromArgs
 	}
 
@@ -34,8 +35,14 @@ func (app *appEnv) run() error {
 	d := app.envConfig.Get("date")
 	targetDate, _ := d.(time.Time)
 
-	days := targetDate.Sub(now).Hours() / 24
-	fmt.Println(days)
+	days := int(targetDate.Sub(now).Hours()/24) + 1
+
+	switch {
+	case days == 1:
+		fmt.Printf("Llegó el día para '%s\n", app.envConfig.GetString("city"))
+	case (days > 1) && (days <= app.envConfig.GetInt("min_days_to_count")):
+		fmt.Printf("%s ... %d\n", app.envConfig.GetString("city"), days)
+	}
 
 	return nil
 }
